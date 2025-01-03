@@ -48,4 +48,30 @@ public class TemplateMethodTest {
         AbstractTemplate template2 = new SubClassLogic2();
         template2.execute();
     }
+
+    /**
+     * use anonymous inner class
+     */
+    @Test
+    void template_method_v2() {
+        AbstractTemplate template1 = new AbstractTemplate() {
+            @Override
+            protected void call() {
+                log.info("Start Business Logic1");
+            }
+        };
+        log.info("Class name = {}", template1.getClass()); // TemplateMethodTest$1
+
+        template1.execute();
+
+        AbstractTemplate template2 = new AbstractTemplate() {
+            @Override
+            protected void call() {
+                log.info("Start Business Logic2");
+            }
+        };
+        log.info("Class name = {}", template2.getClass()); // TemplateMethodTest$2
+
+        template2.execute();
+    }
 }
