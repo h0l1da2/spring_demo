@@ -1,4 +1,4 @@
-package hello.advanced.trace.strategy;
+package hello.advanced.trace.strategy.strategy;
 
 import hello.advanced.trace.strategy.code.ContextV1;
 import hello.advanced.trace.strategy.code.Strategy;
